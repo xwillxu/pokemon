@@ -1,13 +1,7 @@
 import requests, json, random
 
-def get_pokemon_count():
-    res = requests.get(f'https://pokeapi.co/api/v2/pokemon')
-    result = json.loads(res.text)
-    return result['count']
-
-
 f = open("./README.md", "w")
-pokemon_id = random.randint(1, get_pokemon_count())
+pokemon_id = random.randint(1, 1000)
 res = requests.get(f'https://pokeapi.co/api/v2/pokemon/{pokemon_id}')
 result = json.loads(res.text)
 f.write(f'''<p align="center">
